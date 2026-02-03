@@ -17,7 +17,7 @@ import { PostsModule } from './posts/posts.module';
       database: 'post_db',
       synchronize: true,
       autoLoadEntities: true,
-      logging: true,
+      logging: false,
     }),
     UsersModule,
     PostsModule,
