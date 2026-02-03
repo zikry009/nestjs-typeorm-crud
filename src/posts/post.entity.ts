@@ -1,26 +1,28 @@
-import { PostEntity } from 'src/posts/post.entity';
+import { UserEntity } from 'src/users/user.entity';
 import {
   Column,
-  CreateDateColumn,
-  Entity,
-  OneToMany,
+  ManyToOne,
   PrimaryGeneratedColumn,
+  Entity,
+  CreateDateColumn,
   UpdateDateColumn,
+  JoinColumn,
 } from 'typeorm';
 
-@Entity('users')
-export class UserEntity {
+@Entity('posts')
+export class PostEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  name: string;
+  title: string;
 
   @Column()
-  email: string;
+  content: string;
 
-  @OneToMany(() => PostEntity, (post) => post.users)
-  posts: PostEntity[];
+  @ManyToOne(() => UserEntity, (user) => user.posts)
+  @JoinColumn({ name: 'user_id' })
+  users: UserEntity;
 
   @Column({ default: true, type: 'boolean' })
   status: boolean;

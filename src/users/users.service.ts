@@ -85,10 +85,10 @@ export class UsersService {
   async getAllUsers(name: string, email: string): Promise<object> {
     const query = this.userRepository.createQueryBuilder('user');
     if (name) {
-      query.andWhere('user.name = :name', { name });
+      query.andWhere('user.name LIKE :name', { name: `%${name}%` });
     }
     if (email) {
-      query.andWhere('user.email = :email', { email });
+      query.andWhere('user.email LIKE :email', { email: `%${email}%` });
     }
     const users = await query.getMany();
     return {
