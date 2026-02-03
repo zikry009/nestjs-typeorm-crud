@@ -62,9 +62,14 @@ $ npm run test:cov
  User Create API (Post)
 
  ![AltText](https://github.com/zikry009/nestjs-typeorm-crud/blob/main/Screen%20Shot/user%20create%20ss.png)
+ 
  Filter User API (Get)
+ 
+ ![AltText](https://github.com/zikry009/nestjs-typeorm-crud/blob/main/Screen%20Shot/filter%20user%20api.png)
+ 
  Filter Post API (Get)
 
+  ![AltText](https://github.com/zikry009/nestjs-typeorm-crud/blob/main/Screen%20Shot/filter%20post%20ss.png)
 
 
 ## Resources
